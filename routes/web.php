@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Models\products;
 use App\http\Controllers\productsController;
@@ -16,8 +17,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
-//home
-Route::get("/",[productsController::class,'home']);
+
+Route::get("/home",[productsController::class,'home']);
 
 Route::post("/addcart/{product}",[productsController::class,'addcart'])->middleware("auth");
 
@@ -42,6 +43,7 @@ Route::post("/res_user",[UserController::class,'res_user']);
 
 Route::post("/logout",[UserController::class,'destroy']);
 
+Route::post("users/authenticate", [UserController::class, 'authenticate']);
 
 
 

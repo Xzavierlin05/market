@@ -93,13 +93,19 @@
     <form class="login-form" action="/loginverify" method="post">
         @csrf
         <div class="form-group">
-            <label for="username">Username:</label>
+            <label for="username">Email:</label>
             <input type="text" id="username" name="email" required>
+            @error('email')
+                <p>{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
+            @error('password')
+                <p>{{ $message }}</p>
+            @enderror
         </div>
 
         <div class="form-group">
